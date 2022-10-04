@@ -4,6 +4,7 @@ const axios = require('axios').default;
 
 function App() {
   const [robots, setRobots] = useState([]);
+  const [filter, setFilter] = useState("");
   const url = process.env.REACT_APP_API_URL
 
   useEffect(()=>{
@@ -11,7 +12,6 @@ function App() {
           try{
               const response = await axios.get(url)
 
-              console.log(response.data)
               if(response)
               {
                   setRobots(response.data)
@@ -24,39 +24,39 @@ function App() {
       fetchData();
   }, [url])
 
+ 
   return (
-    <div class="container">
-      <div class="row border">
-        <div class="col-12">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control"/>
+    <div className="container">
+      <div className="row border">
+        <div className="col-12">
+            <div className="input-group mb-3">
+                <input type="text" value={filter} onChange={event =>  setFilter(event.target.value)} className="form-control"/>
             </div>
         </div>
-        <div class="col-12">
-          <table class="table">
+        <div className="col-12">
+          <table className="table">
               <thead>
                   <tr>
                   <th scope="col">ID</th>
                   <th>Name</th>
-                  <th scope="col"><i class="bi bi-arrow-up"></i>Battery Level</th>
-                  <th scope="col"><i class="bi bi-arrow-up"></i>Y Coords</th>
-                  <th scope="col"><i class="bi bi-arrow-up"></i>X Coords</th>
+                  <th scope="col"><i className="bi bi-arrow-up"></i>Battery Level</th>
+                  <th scope="col"><i className="bi bi-arrow-up"></i>Y Coords</th>
+                  <th scope="col"><i className="bi bi-arrow-up"></i>X Coords</th>
                   </tr>
               </thead>
-              <tbody class="table-group-divider">
-                {robots.map((robot) => {
-                      return (
-                          
-                        <tr key={robot.robotId}>
-                            <td>{robot.robotId}</td>
-                            <td>Robot #{robot.robotId}</td>
-                            <td>{robot.batteryLevel}</td>
-                            <td>{robot.y}</td>
-                            <td>{robot.x}</td>
-                        </tr>
-                          
-                      )
-                  })}
+              <tbody className="table-group-divider">
+              {robots.filter(robot => robot.robotId.includes(filter) || filter === "")
+                .map((robot) => {
+                return (                          
+                    <tr key={robot.robotId}>
+                        <td>{robot.robotId}</td>
+                        <td>Robot #{robot.robotId}</td>
+                        <td>{robot.batteryLevel}</td>
+                        <td>{robot.y}</td>
+                        <td>{robot.x}</td>
+                    </tr>                          
+                  )
+               })}
               </tbody> 
           </table>
         </div>
@@ -66,3 +66,4 @@ function App() {
 }
 
 export default App;
+
