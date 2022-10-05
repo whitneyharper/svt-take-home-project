@@ -8,7 +8,6 @@ function TableBody({robots, filter}){
                 return (                          
                     <tr key={robot.robotId}>
                         <td>{robot.robotId}</td>
-                        <td>Robot #{robot.robotId}</td>
                         <td>{robot.batteryLevel}</td>
                         <td>{robot.y}</td>
                         <td>{robot.x}</td>
