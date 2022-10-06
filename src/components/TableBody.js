@@ -2,7 +2,7 @@ import React from "react";
 
 function TableBody({robots, filter}){
     return(
-        <tbody className="table-group-divider">
+        <tbody className=" text-center">
             {robots.filter(robot => robot.robotId.includes(filter) || filter === "")
                 .map((robot) => {
                 return (                          

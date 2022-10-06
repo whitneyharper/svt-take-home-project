@@ -138,10 +138,12 @@ function Table({filter}){
             
     return(
         <>
-            <table className="table">
-                <TableHead handleSort={handleSort} batteryIcon={batteryIcon} yIcon={yIcon} xIcon={xIcon}/>
-                <TableBody robots={robots} filter={filter}/>
-            </table>
+            <div className="table-wrapper">
+                <table className="table table-striped table-responsive rounded">
+                    <TableHead handleSort={handleSort} batteryIcon={batteryIcon} yIcon={yIcon} xIcon={xIcon}/>
+                    <TableBody robots={robots} filter={filter}/>
+                </table>
+            </div>            
         </>
     )
 }

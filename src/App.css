@@ -1,2 +1,87 @@
 
 
+th {
+    font-size: 17px;
+ }
+
+th i:hover{
+    color: #000;
+    cursor: pointer;
+}
+
+thead{
+    background: #686868;
+    color: #fff;
+}
+
+.banner{
+    color: #fff;
+    background: #40b2cd;		
+    border-radius: 3px 3px 0 0;
+}
+
+.banner h2 {
+    font-size: 34px;
+}
+
+.input-group input::placeholder{
+    font-style: italic;
+}
+
+.input-group:focus{
+    background: #fff;
+}
+
+.input-group input {
+    height: 34px;
+    padding-right: 35px;
+    background: #f4fcfd;
+}
+
+.table-wrapper{
+    overflow-y: auto;
+    height: 650px;
+}
+
+@media screen and (min-width: 381px) and (max-width: 494px){
+    th{
+        font-size: 12px;
+    }
+
+    td{
+        font-size: 12px;
+    }
+   
+    .banner h2 {
+        font-size: 25px;
+    }
+
+    .table-wrapper{
+        overflow-y: auto;
+        height: 500px;
+    }
+}
+
+@media screen and (min-width: 279px) and (max-width: 380px){
+    th{
+        font-size: 9px;
+    }
+
+   td{
+        font-size: 9px;
+    }
+   
+    .banner h2 {
+        font-size: 20px;
+    }
+
+    .table-wrapper{
+        overflow-y: auto;
+        height: 400px;
+    }
+   
+}
+
+
+    
+
