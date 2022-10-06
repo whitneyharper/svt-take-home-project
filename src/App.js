@@ -3,8 +3,6 @@ import Search from "./components/Search";
 import Table from "./components/Table"
 import './App.css';
 
-
-
 function App() {
   const [filter, setFilter] = useState("");
 
@@ -13,8 +11,7 @@ function App() {
   }
   return(
     <>
-      <div className="container-fluid mt-5 pb-1 px-3">
-        
+      <div className="container-fluid mt-5 pb-1 px-3">        
         <div className="row border-2 banner rounded p-3 mx-auto">         
             <div className="col-xs-12 col-md-6">
               <h2 className="fw-bolder">Robotic Portal</h2>

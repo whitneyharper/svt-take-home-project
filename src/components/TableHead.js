@@ -2,10 +2,6 @@ import React from "react";
 
 function TableHead({handleSort, batteryIcon, yIcon, xIcon,}) {
 
-
-
-   
-
     return(
         <thead className="text-center sticky-top">
             <tr>

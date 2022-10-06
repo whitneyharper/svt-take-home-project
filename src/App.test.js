@@ -85,7 +85,7 @@ test('renders table heading with text content X Coordinate', () => {
 
 
 
-test('test if arrow icon is clickable', () => {
+test('arrow icon is clickable', () => {
   render(<App />);
   const arrow = screen.getByTestId("arrow");
   fireEvent.click(arrow);
@@ -93,7 +93,7 @@ test('test if arrow icon is clickable', () => {
 });
 
 
-test('test arrow icon class changed to bi bi-arrow-down-up me-2', () => {
+test('arrow icon class changed to bi bi-arrow-down-up me-2', () => {
   render(<App />);
   const arrow = screen.getByTestId("arrow");
   fireEvent.click(arrow);
@@ -101,7 +101,7 @@ test('test arrow icon class changed to bi bi-arrow-down-up me-2', () => {
 });
 
 
-test('test if input field can be typed in', () => {
+test('input field can be typed in', () => {
   render(<App />);
   const input = screen.getByPlaceholderText("Search by Id");
   fireEvent.change(input, {target: {value: "1"}});

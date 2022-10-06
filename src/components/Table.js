@@ -3,7 +3,6 @@ import TableBody from "./TableBody";
 import TableHead from "./TableHead";
 const axios = require('axios').default;
 
-  
 function Table({filter}){
     const [robots, setRobots] = useState([]);
     const [order, setOrder] = useState("");
@@ -32,7 +31,6 @@ function Table({filter}){
         fetchData();
     }, [url])
 
-   
     const handleSort = (columnName) => {
         let sortedRobots = [];
         if(columnName === "batteryLevel"){
@@ -134,8 +132,7 @@ function Table({filter}){
             }
         }
     }
-
-            
+    
     return(
         <>
             <div className="table-wrapper">
