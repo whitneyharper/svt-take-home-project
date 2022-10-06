@@ -139,7 +139,7 @@ function Table({filter}){
     return(
         <>
             <div className="table-wrapper">
-                <table className="table table-striped table-responsive rounded">
+                <table className="table table-striped table-responsive rounded" data-testid="table">
                     <TableHead handleSort={handleSort} batteryIcon={batteryIcon} yIcon={yIcon} xIcon={xIcon}/>
                     <TableBody robots={robots} filter={filter}/>
                 </table>
